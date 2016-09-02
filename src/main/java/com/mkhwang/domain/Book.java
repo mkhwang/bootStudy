@@ -1,0 +1,70 @@
+package com.mkhwang.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+/**
+ * Created by mkhwang on 2016-08-31.
+ */
+@Entity //JPA 엔티티로 지정
+public class Book {
+    @Id //유일성 식별
+    @GeneratedValue(strategy = GenerationType.AUTO) //자동으로 값 제공
+    private Long id;
+    private String isbn;
+    private String title;
+    private String author;
+    private String description;
+
+    private Reader reader;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setReader(Reader reader) {
+        this.reader = reader;
+    }
+
+    public Reader getReader() {
+        return reader;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
